@@ -1034,6 +1034,9 @@ main {
   #BLOG
 \*-----------------------------------*/
 
+#blog-construct{
+  color: white;
+}
 .blog-posts { margin-bottom: 10px; }
 
 .blog-posts-list {
@@ -1512,7 +1515,21 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .blog-content { padding: 25px; }
 
+  .blog-construct-svg-container {
+    overflow: hidden; 
+    line-height: 0; 
+    font-size: 0; 
+  }
 
+  .blog-construct-svg {
+  border: none; 
+  margin: 0 auto;
+  padding-top: 50px;
+  display: block; 
+  background: transparent; 
+  height: 300px;
+  width: 300px;
+}
 
   /**
    * #CONTACT
