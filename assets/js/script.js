@@ -157,3 +157,45 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// Theme switcher
+function initializeThemeSwitcher() {
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Check for saved theme preference or default to light theme
+  const currentTheme = localStorage.getItem('theme') || 'light-theme';
+  body.classList.add(currentTheme);
+
+  // Theme switch event handler
+  themeToggle.addEventListener('click', () => {
+    if (body.classList.contains('light-theme')) {
+      body.classList.replace('light-theme', 'dark-theme');
+      localStorage.setItem('theme', 'dark-theme');
+    } else {
+      body.classList.replace('dark-theme', 'light-theme');
+      localStorage.setItem('theme', 'light-theme');
+    }
+    updateThemeIcon();
+  });
+
+  // Update icon based on current theme
+  function updateThemeIcon() {
+    const darkIcon = themeToggle.querySelector('.dark-icon');
+    const lightIcon = themeToggle.querySelector('.light-icon');
+    
+    if (body.classList.contains('light-theme')) {
+      darkIcon.style.display = 'block';
+      lightIcon.style.display = 'none';
+    } else {
+      darkIcon.style.display = 'none';
+      lightIcon.style.display = 'block';
+    }
+  }
+
+  // Initial icon update
+  updateThemeIcon();
+}
+
+// Call the function when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', initializeThemeSwitcher);

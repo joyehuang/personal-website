@@ -69,6 +69,12 @@
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
 
+  /* Theme colors */
+  --bg-color: var(--smoky-black);
+  --bg-color-alt: var(--eerie-black-2);
+  --text-color: var(--light-gray);
+  --text-color-alt: var(--white-2);
+
   /**
    * typography
    */
@@ -111,6 +117,11 @@
 
 }
 
+.light-theme {
+  --bg-color: hsl(0, 0%, 90%);
+  --bg-color-alt: hsl(0, 0%, 100%);
+  --text-color: hsl(0, 0%, 20%);
+}
 
 
 
@@ -1906,5 +1917,15 @@ textarea.form-input::-webkit-resizer { display: none; }
 	 */
 
   .timeline-text { max-width: 700px; }
+
+  .timeline-item:not(:last-child)::before { left: -40px; }
+
+  .timeline-item::after {
+    height: 8px;
+    width: 8px;
+    left: -43px;
+  }
+
+  .skills-item:not(:last-child) { margin-bottom: 25px; }
 
 }

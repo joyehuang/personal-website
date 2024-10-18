@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vCard - Personal Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    // Apply the saved theme immediately to prevent flash of unstyled content
+    (function() {
+      var savedTheme = localStorage.getItem('theme') || 'light-theme';
+      document.documentElement.classList.add(savedTheme);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+    <aside class="sidebar" data-sidebar>
+        <div class="sidebar-info">
+
+            <figure class="avatar-box">
+              <img src="../assets/images/final-1.png" alt="Joye Huang" width="80" class="avatar-image">
+            </figure>
+    
+            <div class="info-content">
+              <h1 class="name" title="Richard hanrick">Joye Huang</h1>
+              
+              <p class="title">Uni Freshman</p>
+              
+            </div>
+    
+            <button class="info_more-btn" data-sidebar-btn>
+              <span>Show Contacts</span>
+    
+              <ion-icon name="chevron-down"></ion-icon>
+            </button>
+    
+          </div>
+    
+          <div class="sidebar-info_more">
+    
+            <div class="separator"></div>
+    
+            <ul class="contacts-list">
+    
+              <li class="contact-item">
+    
+                <div class="icon-box">
+                  <ion-icon name="mail-outline"></ion-icon>
+                </div>
+    
+                <div class="contact-info">
+                  <p class="contact-title">Email</p>
+    
+                  <a href="mailto:richard@example.com" class="contact-link">joyeh.work@gmail.com</a>
+                </div>
+    
+              </li>
+    
+              <li class="contact-item">
+    
+                <div class="icon-box">
+                  <ion-icon name="calendar-outline"></ion-icon>
+                </div>
+    
+                <div class="contact-info">
+                  <p class="contact-title">Birthday</p>
+    
+                  <time datetime="1982-06-23">June 4, 2005</time>
+                </div>
+    
+              </li>
+    
+              <li class="contact-item">
+    
+                <div class="icon-box">
+                  <ion-icon name="location-outline"></ion-icon>
+                </div>
+    
+                <div class="contact-info">
+                  <p class="contact-title">Location</p>
+    
+                  <address>Melbourne, Victoria, Australia</address>
+                </div>
+    
+              </li>
+    
+            </ul>
+    
+            <div class="separator"></div>
+    
+            <ul class="social-list">
+    
+              <li class="social-item">
+                <a href="https://github.com/joyehuang?tab=repositories" class="social-link">
+                  <ion-icon name="logo-github"></ion-icon>
+                </a>
+              </li>
+              
+              <li class="social-item">
+                <a href="https://www.linkedin.com/in/de-shiou-huang-4246202a3/" class="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+    
+            </ul>
+    
+          </div>
+          <div class="theme-switcher">
+            <button id="theme-toggle" aria-label="Toggle theme">
+              <ion-icon name="moon-outline" class="dark-icon"></ion-icon>
+              <ion-icon name="sunny-outline" class="light-icon"></ion-icon>
+            </button>
+          </div>
+    </aside>
+
+    <!--
+      - #main-content
+    -->
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="../index.html" class="navbar-link">About</a>
+          </li>
+          <li class="navbar-item">
+            <a href="resume.html" class="navbar-link">Resume</a>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>Portfolio</button>
+          </li>
+          <li class="navbar-item">
+            <a href="blog.html" class="navbar-link">Blog</a>
+          </li>
+          <li class="navbar-item">
+            <a href="contact.html" class="navbar-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!--
+        - #PORTFOLIO
+      -->
+      <article class="portfolio active" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Course Project</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Mobile Development</button>
+            </li>
+          </ul>
+
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-selecct-value>Select category</div>
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="select-list">
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>Course Project</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>Web Development</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>Mobile Development</button>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="project-list">
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="../assets/images/nextjs-dashboard.png" alt="nextjs-dashboard" loading="lazy">
+                </figure>
+                <h3 class="project-title">Customer Invoice Dashboard</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="mobile development">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="../assets/images/fwend.png" alt="fwend" loading="lazy">
+                </figure>
+                <h3 class="project-title">Fwend</h3>
+                <p class="project-category">Mobile Development</p>
+              </a>
+            </li>
+            
+            <li class="project-item active" data-filter-item data-category="applications">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="../assets/images/flutter project.png" alt="flutter project" loading="lazy">
+                </figure>
+                <h3 class="project-title">Flutter Project</h3>
+                <p class="project-category">Mobile Development</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="course project">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="../assets/images/cs61a hog gui.png" alt="cs61a hog" loading="lazy">
+                </figure>
+                <h3 class="project-title">CS61A Hog</h3>
+                <p class="project-category">Course Project</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="course project">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="../assets/images/cats gui.png" alt="cs61a cats" loading="lazy">
+                </figure>
+                <h3 class="project-title">CS61A Cats</h3>
+                <p class="project-category">Course Project</p>
+              </a>
+            </li>
+          </ul>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <!--
+    - custom js link
+  -->
+  <script src="../assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Add theme switcher script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+      function toggleTheme() {
+        if (document.documentElement.classList.contains("light-theme")) {
+          document.documentElement.classList.remove("light-theme");
+          document.documentElement.classList.add("dark-theme");
+          localStorage.setItem("theme", "dark-theme");
+        } else {
+          document.documentElement.classList.remove("dark-theme");
+          document.documentElement.classList.add("light-theme");
+          localStorage.setItem("theme", "light-theme");
+        }
+      }
+
+      themeToggle.addEventListener("click", toggleTheme);
+
+      // Set initial theme based on user preference or saved theme
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        document.documentElement.classList.add(savedTheme);
+      } else if (prefersDarkScheme.matches) {
+        document.documentElement.classList.add("dark-theme");
+      } else {
+        document.documentElement.classList.add("light-theme");
+      }
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+:root {
+  /* Dark theme colors (default) */
+  --bg-color: #1e1e1f;
+  --primary-color: #ffffff;
+  --secondary-color: #f3a952;
+  --text-color: #a2a2a2;
+}
+
+body.light-theme {
+  /* Light theme colors */
+  --bg-color: #f5f5f5;
+  --primary-color: #000000;
+  --secondary-color: #f3a952;
+  --text-color: #333333;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Add styles for other elements using the theme variables */
+
+.theme-switcher {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.dark-icon, .light-icon {
+  display: none;
+}
+
+body:not(.light-theme) .dark-icon,
+body.light-theme .light-icon {
+  display: inline-block;
+}

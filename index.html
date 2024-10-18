@@ -16,6 +16,7 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/theme.css">
 
   <!--
     - google font link
@@ -23,6 +24,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    // Apply the saved theme immediately to prevent flash of unstyled content
+    (function() {
+      var savedTheme = localStorage.getItem('theme') || 'light-theme';
+      document.documentElement.classList.add(savedTheme);
+    })();
+  </script>
 </head>
 
 <body>
@@ -130,6 +139,14 @@
 
       </div>
 
+      <!-- Add this just before the closing </aside> tag in the sidebar -->
+      <div class="theme-switcher">
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <ion-icon name="moon-outline" class="dark-icon"></ion-icon>
+          <ion-icon name="sunny-outline" class="light-icon"></ion-icon>
+        </button>
+      </div>
+
     </aside>
 
 
@@ -147,31 +164,23 @@
       -->
 
       <nav class="navbar">
-
         <ul class="navbar-list">
-
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link active" data-nav-link>About</button>
           </li>
-
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <a href="pages/resume.html" class="navbar-link">Resume</a>
           </li>
-
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <a href="pages/portfolio.html" class="navbar-link">Portfolio</a>
           </li>
-
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
+            <a href="pages/blog.html" class="navbar-link">Blog</a>
           </li>
-
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
+            <a href="pages/contact.html" class="navbar-link">Contact</a>
           </li>
-
         </ul>
-
       </nav>
 
 
@@ -334,131 +343,7 @@
 
       <article class="resume" data-page="resume">
 
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">University of Melbourne - Bachelor of Science</h4>
-
-              <span>2024 — Present</span>
-
-              <p class="timeline-text">
-                Currently a first-year student pursuing a Bachelor of Science with a focus on Computing and Software Systems. 
-                Embarking on an exciting journey of learning, combining foundational knowledge with hands-on programming experience 
-                to build a strong basis for a career in technology.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">CISSA - Diversity Officer</h4>
-
-              <span>2024 — Present</span>
-
-              <p class="timeline-text">
-                In this role, 
-                  I have helped CISSA to hold five events, with the largest one 
-                  attracting 100 international students. Additionally, I am responsible 
-                  for setting up Chinese social media platforms for the organization, 
-                  including Xiaohongshu and a WeChat group chat.
-              </p>
-
-          </ol>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Web Development</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Mobile Development</h5>
-                <data value="30">30%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 30%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Marketing</h5>
-                <data value="40">40%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 40%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Branding</h5>
-                <data value="50">50%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
+        
 
       </article>
 
